@@ -7,5 +7,7 @@ It just needs to be run in a text editor with a console, and the output will app
 ### Assumptions that I made
 * When a player selects 'q', they don't need to be asked if they are sure they meant to do that, since the input 'q' is quite different to co-ordinates
 * Anything aside from 'q' and the co-ordinates in 'places' are considered incorrect
+* The board will always be a 3x3 board
+* It is possible that people might quit using a capital Q as well as a lowercase q
 
 

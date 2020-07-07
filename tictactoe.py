@@ -1,3 +1,6 @@
+# Tic Tac Toe game
+# By Leah Filkin
+
 places = {'1,1': '.', '1,2': '.', '1,3': '.',
           '2,1': '.', '2,2': '.', '2,3': '.',
           '3,1': '.', '3,2': '.', '3,3': '.'}
@@ -11,9 +14,7 @@ def printBoard(places):
 
 def match(places):
     printBoard(places)
-    # players to switch between
     players = ['1', '2']
-    # pieces to switch between
     pieces = ['X', 'O']
     # count so that I can check how many goes have happened
     count = 0
@@ -28,9 +29,7 @@ def match(places):
         # if the input is correct (its not an incorrect coordinate) check if the place is already filled. if it isnt, put the
         # piece there and break the loop, if it is, let the person have another try (continue the loop)
         if inputCoord in places:
-            # check if the place is empty
             if places[inputCoord] == ".":
-                # if its empty, put the piece there
                 places[inputCoord] = pieces[index]
                 # check if the piece placement has now resulted in a win
                 won = checkForWin()
@@ -43,10 +42,10 @@ def match(places):
                 else:
                     print("\nMove accepted, here's the current board:\n")
                     printBoard(places)
-                    # if the index is 0, 1 / 2 is 1 so the index will change to 1
-                    # if the index is 1, 2 / 2 is 0 so the index will change to 0
+                    # if the index is 0, 1 % 2 is 1 so the index will change to 1
+                    # if the index is 1, 2 % 2 is 0 so the index will change to 0
                     index = (index+1) % len(players)
-                    # if count has reached 8 (there have been 9 moves) then it is a draw as no one has won yet
+                    # if count has reached 8 (there have been 9 moves) then it is a draw. But only if the previous if statement (winning) isnt true
                     if count == 8:
                         print("\nWe have reached a draw! Thank you for playing.")
                         break
